@@ -24,13 +24,13 @@ function playround(humanchoice,computerchoice){
     }
     else{
         console.log('Computer wins!');
-        return computerchoice;
+        return 'computer';
     }
 }
 
 function playgame(){
-    let humanscore=0;
-    let computerscore=0;
+    let humanscore = 0;
+    let computerscore = 0;
 
     for(let i = 0; i < 5; i++){
         console.log(`Round ${i+1}`);
