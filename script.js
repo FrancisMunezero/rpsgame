@@ -10,9 +10,7 @@ function getHumanChoice(){
     return choice;
 }
 
-function playround(){
-    let humanchoice=getHumanChoice();
-    let computerchoice=getComputerChoice();
+function playround(humanchoice,computerchoice){
     console.log(`You chose ${humanchoice} and computer chose ${computerchoice}`);
 
     if(humanchoice === computerchoice){
@@ -20,7 +18,7 @@ function playround(){
         return "tie";
     }
 
-    if((humanchoice === "rock" && computerchoice === "paper") || (humanchoice === "paper" && computerchoice === "scissors") || (humanchoice === "scissors" && computerchoice === "rock")){
+    if((humanchoice === "rock" && computerchoice === "scissors") || (humanchoice === "paper" && computerchoice === "rock") || (humanchoice === "scissors" && computerchoice === "paper")){
         console.log('You win!');
         return 'human';
     }
@@ -38,7 +36,7 @@ function playgame(){
         console.log(`Round ${i+1}`);
         let humanchoice = getHumanChoice();
         let computerchoice = getComputerChoice();
-        let winner = playround();
+        let winner = playround(humanchoice,computerchoice);
 
         if(winner === 'human') humanscore++;
         else if(winner === 'computer') computerscore++;
